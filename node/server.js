@@ -7,7 +7,6 @@ http.createServer(function(req, res){
 
 function time(uptime) {
 console.log(uptime)
-console.log("Not sure if im misunderstanding something but for some reason uptime always returns above 2000 and it messes with it")
 Days = uptime/(24*3600)
 uptime = uptime%(24*3600)
 Hours = uptime/3600
