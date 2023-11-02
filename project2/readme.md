@@ -10,3 +10,8 @@ Step 3) Open a webpage with the url 'localhost:3000/SeoulWeather'
 
 Planned Results:
 A json output of conditions in Seoul on the webpage
+
+Citations:
+https://open-meteo.com/en/docs#current=temperature_2m,is_day,precipitation,rain,showers,snowfall&hourly=&temperature_unit=fahrenheit - Thank you for the generous API that allowed me to get the up to date weather information
+
+
