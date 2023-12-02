@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<title> File uploading site </title>
+<h2> Visit /get to download the file </h2>
+<br>
+<p> To upload a file, click on the Choose File button, and then submit </p>
+
+
+<form action="file_save.php" method="post" enctype="multipart/form-data">
+	<input type="file" name="filename" id="myFile">
+	<input type="submit", value="Submit File">
+</form>
+<br>
+<p> This is intended as a crude file sharing service for individual files, note that many ordinary security features aren't added since this is a personal project, although the filetypes are limited. </p>
+
+
+{% endblock %}
