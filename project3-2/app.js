@@ -1,8 +1,7 @@
 
-/*
- * Code largely taken from https://www.youtube.com/watch?v=1y0-IfRW114
+/* Code largely taken from https://www.youtube.com/watch?v=1y0-IfRW114
  * I added comments & modified the try and catch statements with different messages
- * I also modified the filename to be dynamic and based off the input name 
+ * I also modified the filename to be based off the input name for ease of use 
 */
 
 
@@ -27,6 +26,12 @@ const path = require('path')
 const fs = require('fs')
 //include path & filesystem module
 
+const prompt = require("prompt-sync")();
+//force prompt to be included
+
+const { exec } = require('node:child_process');
+//from nodejs documentation, calls child process
+
 const drive = google.drive({
 	version: 'v3',
 	auth: oauth2Client
@@ -36,11 +41,17 @@ const drive = google.drive({
 const filepath = '/home/Teleb/it3038c-scripts/project3-2/upload.jpg'
 //define filepath, in this case a static filepath is used because this upload is intended to only happen once, with subsequent uploads overriding previous ones.
 
+
+filename = prompt("What would you like the file to be called? ")
+
+
+filename += ".jpg"
+
 async function uploadFile() {
 	try {
 	const response = await drive.files.create({
 	requestBody:  {
-	name: 'upload.jpg'
+	name: filename
 	},
 	media: {
 	mimeType: 'image/jpeg',
@@ -48,11 +59,16 @@ async function uploadFile() {
 },
 //define file and its media type, grab file from filepath using fs
 })
+
 console.log("Upload successful to Google Drive")
+//Successful upload!
+
 } catch (error) {
 	console.log("Upload failed: " + error.message)
 }}
 //try and catch will attempt to first upload file, then if it fails pop the error message in. 
+
+}
 
 uploadFile();
 //run function
