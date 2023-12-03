@@ -7,13 +7,13 @@ sleep 5
 gnome-screenshot -f upload.jpg
 #takes ss using gnome
 spd-say "Screenshot Taken, attempting Upload"
-#announces screenshot verbally
+#announces screenshot verbally- broke on sandbox? ):
 
 echo "upload.jpg has been saved successfully, moving to Upload step"
-#sends confirmation message
+#sends confirmation message in console
 
 node app.js
 #runs next command
 
-rm upload.jpg
+rm upload.jpg 
 #removes upload file from local, since it is now uploaded.

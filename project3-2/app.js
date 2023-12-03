@@ -38,14 +38,13 @@ const drive = google.drive({
 })
 //define drive
 
-const filepath = '/home/Teleb/it3038c-scripts/project3-2/upload.jpg'
+const filepath = '/home/cechuser/it3038c-scripts/project3-2/upload.jpg'
 //define filepath, in this case a static filepath is used because this upload is intended to only happen once, with subsequent uploads overriding previous ones.
 
 
 filename = prompt("What would you like the file to be called? ")
-
-
 filename += ".jpg"
+//grab filename from user and append filetype to it
 
 async function uploadFile() {
 	try {
@@ -68,7 +67,7 @@ console.log("Upload successful to Google Drive")
 }}
 //try and catch will attempt to first upload file, then if it fails pop the error message in. 
 
-}
+
 
 uploadFile();
 //run function
