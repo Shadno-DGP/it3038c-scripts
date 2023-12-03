@@ -12,7 +12,8 @@ Its much less of a hassle to simply run the script, and have google drive open t
 additionally, I usually make my word docs in google drive then save them, so I can add the images directly from drive into the doc and skip any form of normal file manager.
 
 How does the project work:
-It runs by doing sh screenShot.sh 
+Start the process by running sh screenShot.sh 
+
 this announces the start of the process. After 5 seconds (so you can go to what you want to screenshot) it will take an ss of the entire screen using gnome-screenshot and ask for a console input of the filename. (It also attempts to audibly announce when the screenshot is taken but this appears to break on sandbox, I was able to get it working on a personal vm)
 
 It will then upload the file to google drive and announce the completion or failure of the process, as well as deleting the local file.
